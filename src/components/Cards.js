@@ -1,0 +1,67 @@
+import {motion, LayoutGroup, AnimatePresence} from 'framer-motion'
+import { useState, useEffect, use } from 'react';
+import styles from '@/styles/Projects.module.css'
+import imga from '../resources/SamasemBG.png'
+
+const CardExpanded = ({data, unExpand}) =>{
+    return( 
+    <AnimatePresence mode='wait'>
+            <motion.div className={styles.cardExpanded}
+            style={{backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.7),rgba(0, 0, 0, 0.7)), url(${data.image.src})`}}
+            key={data.id}
+            initial={{ opacity: 0, scale: 1 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0, scale: 0 }}
+            >
+                <img className={styles.imgModal} src="" alt="" />
+                <h1>{data.name}</h1>
+                <p>{data.description}d</p>
+            </motion.div>
+    </AnimatePresence>)
+};
+
+const Overlay = ({unExpand,data}) =>{
+    // const variants = {open:{opacity:0.5}, closed: {opacity: 0}}
+    return (<motion.div 
+                className={styles.overlay} onClick={unExpand}>
+                    <CardExpanded data={data}/>
+            </motion.div>)
+};
+
+function Card({data, expand}){
+  return(
+    <motion.div className={styles.cardContainer}
+    whileHover={{scale: 1.1}}>
+        <div
+        id={data.id}
+        className={`${styles.card} ${styles.cardCompact}`}
+        layoutId="expandable-card"
+        onClick={expand}
+        style={{backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.7),rgba(0, 0, 0, 0.7)), url(${data.image.src})`}}>
+          {data.name}
+        </div>
+    </motion.div>
+  );
+}
+
+const Cards = ({data}) =>{
+    const [isExpanded, setExpanded] = useState(false)
+
+    const expandCard = () =>{
+      setExpanded(true);
+    };
+    const unExpandCard = () =>{
+      setExpanded(false);
+    };
+
+  return(
+    <>
+    <AnimatePresence>
+        <Card data ={data} expand={expandCard}/>
+        {isExpanded && <Overlay unExpand={unExpandCard} data={data}></Overlay>}
+    </AnimatePresence>
+
+    </>
+  )
+}
+export default Cards

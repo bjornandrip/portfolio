@@ -1,0 +1,67 @@
+.box{
+    position: absolute;
+    text-align: center;
+    width: 95vw;
+    height: 90vh;
+    top: 5vh;
+    left: 2.5vw;
+    background-color: black;
+    margin: 0 auto;
+  }
+  .gridContainer{
+    height: inherit;
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+  }
+
+
+  .buttons{
+    background-color: transparent;
+    color: aliceblue;
+    font-size: large;
+    cursor: pointer;
+    border: 0.5px solid aliceblue;
+    height: 70px;
+    width: 170px;
+  }
+  .home{
+    position: absolute;
+    top: calc(50% - 35px);
+    left: -2%;
+  }
+  
+  .about{
+    position: absolute;
+    top: calc(50% - 35px);
+    right: -2%;
+  }
+
+  .svgContainer{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    margin: auto;
+    width: 30vw;
+    height: 150px;
+    background-color: black;
+  }
+  .svgContent{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .svg{
+  }
+  .pathMail{
+    transform: translate(0%, 0%);
+  }
+  .pathGit{
+    transform: translate(10%, 3%);
+  }
+  .pathFb{
+    transform: translate(10%, 4.5%);
+  }
+  .pathInsta{
+    transform: translate(10%, -3%);
+  }
