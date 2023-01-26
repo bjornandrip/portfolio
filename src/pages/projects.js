@@ -49,7 +49,6 @@ export default function Projects(){
   const isInView1 = useInView(ref1)
   const isInView2 = useInView(ref2)
   const isInView3= useInView(ref3)
-  });
 
   return(
     <> 
