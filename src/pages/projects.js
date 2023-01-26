@@ -1,5 +1,4 @@
 import React, { useRef } from 'react'
-import { useMediaQuery } from 'react-responsive'
 import styles from '@/styles/Projects.module.css'
 import Link from 'next/link';
 import {motion, AnimatePresence, useInView} from 'framer-motion'
@@ -58,7 +57,7 @@ export default function Projects(){
             ref={ref1}
             initial={{x:-100}}
             animate={isInView1 ?({ x: 0 }):({opacity:0})} 
-            transition={{duration:7,delay:0.1, type: "spring", stiffness: 100}}
+            transition={{type: "spring", stiffness: 100}}
             >
               Projects
             </motion.h1>
@@ -66,13 +65,13 @@ export default function Projects(){
               ref={ref2}
               initial={{x:-100}}
               animate={isInView2 ?({ x: 0 }):({opacity:0})} 
-              transition={{delay:0.1, type: "spring", stiffness: 100 }}
+              transition={{type: "spring", stiffness: 100 }}
               >
                 Check out my recent projects</motion.h2>
               <motion.div className={styles.cardsContainer}
               initial={{x:-100}}
               animate={isInView3 ?({ x: 0 }):({opacity:0})} 
-              transition={{delay:0.1, type: "spring", stiffness: 100 }}
+              transition={{type: "spring", stiffness: 100 }}
               ref={ref3}>
                     {projectsData.map((item)=>
                     <Cards data={item}/>

@@ -1,5 +1,4 @@
 import React from 'react'
-import { useMediaQuery, ServerSideRender } from 'react-responsive'
 import Head from 'next/head'
 import styles from '@/styles/Home.module.css'
 import {motion} from 'framer-motion'
@@ -41,8 +40,6 @@ export default function Home() {
   useEffect(() => {
     if ( movingSocialsLeft !== undefined && movingSocialsLeft !== null) window.localStorage.setItem("socials-Left", JSON.stringify(movingSocialsLeft))
   },[movingSocialsLeft])
-
-  const [isMobile, setMobile] = useState(false);
 
 
   return (

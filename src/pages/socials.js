@@ -1,5 +1,4 @@
 import React from 'react'
-import { useMediaQuery } from 'react-responsive'
 import styles from '@/styles/Socials.module.css'
 import Link from 'next/link';
 import {easeInOut, motion} from 'framer-motion'
