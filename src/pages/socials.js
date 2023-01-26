@@ -1,3 +1,5 @@
+import React from 'react'
+import { useMediaQuery } from 'react-responsive'
 import styles from '@/styles/Socials.module.css'
 import Link from 'next/link';
 import {easeInOut, motion} from 'framer-motion'
@@ -51,85 +53,99 @@ export default function Projects(){
     await navigator.clipboard.writeText('bjornandrip@gmail.com');
     alert('Email copied to clipboard');
   } 
+  const isMobile = useMediaQuery({
+    query: 'max-width: 767px'
+  });
 
   return(
     <> 
-  <motion.div className={styles.box} 
-  initial={movingSocialsLeft ? { x: "-102.5vw"} : { x: "102.5vw"}} 
-  animate={{x: "0%"}}
-  exit={movingSocialsLeft ? { x: "-102.5vw"} : { x: "102.5vw"}} 
-  transition={{duration: 1.5, ease: "easeOut"}}>
-    <div className={styles.gridContainer}>
-      <h1>SOCIALS</h1>
-      <h2>Feel free to check out or contact me on any of my socials below</h2>
-        <div className={styles.svgContainer}>
-          <div className={styles.svgContent}>
-            <a onClick={copyEmail}>
-            <motion.svg className={styles.svg}
-            width = '100%'
-            height='100%'
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 100 100"
-            initial="hidden"
-            animate="visible">
-              <motion.path className={styles.pathMail}
-              fill-rule="evenodd" clip-rule="evenodd" 
-              d={paths.paths.mail}
-              fill="none"
-              variants={pathVariants}/>
-            </motion.svg>
-            </a>
+    {isMobile ? (
+        <>
+      <div className={styles.box}>
+        <h1>Socials</h1>
+        <p>Hi I am Björn Andri and I have a BSc in Mechatronics Engineering and I am also an independent web developer.<br/>
+          My main interest is frontend web development... bla bla more text...</p>
+      </div>
+      </>
+      ):(
+        <motion.div className={styles.box} 
+        initial={movingSocialsLeft ? { x: "-102.5vw"} : { x: "102.5vw"}} 
+        animate={{x: "0%"}}
+        exit={movingSocialsLeft ? { x: "-102.5vw"} : { x: "102.5vw"}} 
+        transition={{duration: 1.5, ease: "easeOut"}}>
+          <div className={styles.gridContainer}>
+            <h1>SOCIALS</h1>
+            <h2>Feel free to check out or contact me on any of my socials below</h2>
+              <div className={styles.svgContainer}>
+                <div className={styles.svgContent}>
+                  <a onClick={copyEmail}>
+                  <motion.svg className={styles.svg}
+                  width = '100%'
+                  height='100%'
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 100 100"
+                  initial="hidden"
+                  animate="visible">
+                    <motion.path className={styles.pathMail}
+                    fill-rule="evenodd" clip-rule="evenodd" 
+                    d={paths.paths.mail}
+                    fill="none"
+                    variants={pathVariants}/>
+                  </motion.svg>
+                  </a>
+                </div>
+                <div className={styles.svgContent}>
+                <a href="https://github.com/bjornandrip">
+                  <motion.svg className={styles.svg} 
+                  width='100%' height='100%'
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 100 100"
+                  initial="hidden"
+                  animate="visible">
+                    <motion.path className={styles.pathGit}
+                    fill-rule="evenodd" 
+                    clip-rule="evenodd" 
+                    d={paths.paths.github}
+                    fill="none"
+                    variants={pathVariants}/>
+                  </motion.svg>
+                  </a>
+                </div>
+                <div className={styles.svgContent}>
+                  <a href="https://www.facebook.com/profile.php?id=100009972552568">
+                  <motion.svg className={styles.svg}
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 100 100"
+                  initial="hidden"
+                  animate="visible">
+                    <motion.path className={styles.pathFb}
+                    fill-rule="evenodd" clip-rule="evenodd" 
+                    d={paths.paths.facebook}
+                    fill="none"
+                    variants={pathVariants}/>
+                  </motion.svg>
+                  </a>
+                </div>
+                <div className={styles.svgContent}>
+                  <motion.svg className={styles.svg}
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 100 100"
+                  initial="hidden"
+                  animate="visible">
+                    <motion.path className={styles.pathInsta}
+                    fill-rule="evenodd" clip-rule="evenodd" 
+                    d={paths.paths.insta}
+                    fill="none"
+                    variants={pathVariants}/>
+                  </motion.svg>
+                </div>
+              </div>
           </div>
-          <div className={styles.svgContent}>
-          <a href="https://github.com/bjornandrip">
-            <motion.svg className={styles.svg} 
-            width='100%' height='100%'
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 100 100"
-            initial="hidden"
-            animate="visible">
-              <motion.path className={styles.pathGit}
-              fill-rule="evenodd" 
-              clip-rule="evenodd" 
-              d={paths.paths.github}
-              fill="none"
-              variants={pathVariants}/>
-            </motion.svg>
-            </a>
-          </div>
-          <div className={styles.svgContent}>
-            <a href="https://www.facebook.com/profile.php?id=100009972552568">
-            <motion.svg className={styles.svg}
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 100 100"
-            initial="hidden"
-            animate="visible">
-              <motion.path className={styles.pathFb}
-              fill-rule="evenodd" clip-rule="evenodd" 
-              d={paths.paths.facebook}
-              fill="none"
-              variants={pathVariants}/>
-            </motion.svg>
-            </a>
-          </div>
-          <div className={styles.svgContent}>
-            <motion.svg className={styles.svg}
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 100 100"
-            initial="hidden"
-            animate="visible">
-              <motion.path className={styles.pathInsta}
-              fill-rule="evenodd" clip-rule="evenodd" 
-              d={paths.paths.insta}
-              fill="none"
-              variants={pathVariants}/>
-            </motion.svg>
-          </div>
-        </div>
-    </div>
-      <Link href='/projects'><button onClick={() => {setSocialsLeft(false);setProjectsLeft(true)}} className={`${styles.buttons} ${styles.home}`}>Projects</button></Link>
-      <Link href="/"><button onClick={() => {setSocialsLeft(true); setIndexLeft(false);}} className={`${styles.buttons} ${styles.about}`}>Home</button></Link>
-  </motion.div>
+            <Link href='/projects'><button onClick={() => {setSocialsLeft(false);setProjectsLeft(true)}} className={`${styles.buttons} ${styles.home}`}>Projects</button></Link>
+            <Link href="/"><button onClick={() => {setSocialsLeft(true); setIndexLeft(false);}} className={`${styles.buttons} ${styles.about}`}>Home</button></Link>
+        </motion.div>
+        )}
+ 
     
   </>
    

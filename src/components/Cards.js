@@ -22,7 +22,11 @@ const CardExpanded = ({data, unExpand}) =>{
             </motion.div>
     </AnimatePresence>
     </a>
-    <button className={styles.closeButton} onClick={unExpand}></button>
+    <motion.button className={styles.closeButton} onClick={unExpand}
+    initial={{ opacity: 0}}
+    animate={{ opacity: 1}}
+    transition={{ease: "easeInOut", duration:4}}
+    exit={{ opacity: 0}}></motion.button>
     </>)
 };
 

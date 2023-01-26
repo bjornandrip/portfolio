@@ -29,3 +29,14 @@
   top: calc(50% - 35px);
   right: -2%;
 }
+
+@media only screen and (max-width: 767px) {
+  .box {
+    position: relative;
+    background-color: black;
+    width: 100vw;
+    height: 100vh;
+    left: 0;
+    top: 0;
+  }
+}
