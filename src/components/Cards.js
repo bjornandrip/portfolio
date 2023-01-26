@@ -11,8 +11,9 @@ const CardExpanded = ({data, unExpand}) =>{
             <motion.div className={styles.cardExpanded}
             style={{backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5)), url(${data.image.src})`}}
             key={data.id}
-            initial={{ opacity: 0, scale: 1 }}
+            initial={{ opacity: 0, scale: 0 }}
             animate={{ opacity: 1, scale: 1 }}
+            transition={{ease: "easeInOut", duration:0.5}}
             exit={{ opacity: 0, scale: 0 }}
             >
                 <h1>{data.name}</h1>
@@ -36,7 +37,9 @@ const Overlay = ({unExpand,data}) =>{
 function Card({data, expand}){
   return(
     <motion.div className={styles.cardContainer}
-    whileHover={{scale: 1.1}}>
+    initial={{scale: 0}}
+    animate={{scale: 1}}
+    transition={{ease: "easeInOut", duration:3}}>
         <div
         id={data.id}
         className={`${styles.card} ${styles.cardCompact}`}

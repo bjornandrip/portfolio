@@ -47,6 +47,11 @@ export default function Projects(){
     if ( movingProjectsLeft !== undefined && movingProjectsLeft !== null) window.localStorage.setItem("projects-Left", JSON.stringify(movingProjectsLeft))
   },[movingProjectsLeft])
 
+  async function copyEmail (){
+    await navigator.clipboard.writeText('bjornandrip@gmail.com');
+    alert('Email copied to clipboard');
+  } 
+
   return(
     <> 
   <motion.div className={styles.box} 
@@ -56,10 +61,10 @@ export default function Projects(){
   transition={{duration: 1.5, ease: "easeOut"}}>
     <div className={styles.gridContainer}>
       <h1>SOCIALS</h1>
-      <h2>Check out My socials</h2>
+      <h2>Feel free to check out or contact me on any of my socials below</h2>
         <div className={styles.svgContainer}>
           <div className={styles.svgContent}>
-            <a onClick={() => navigator.clipboard.writeText('email')}>
+            <a onClick={copyEmail}>
             <motion.svg className={styles.svg}
             width = '100%'
             height='100%'

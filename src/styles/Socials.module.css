@@ -57,6 +57,9 @@
     top: 0;
     left: 0;
   }
+  .svg:hover{
+    scale: 1.1;
+  }
   .pathMail{
     transform: translate(0%, 0%);
   }

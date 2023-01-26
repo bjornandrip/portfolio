@@ -46,6 +46,10 @@
   line-height: 1000%;
   padding: 0.5rem;
   border-radius: 1.5rem;
+  transition: all .2s ease-in-out;
+}
+.cardCompact:hover{
+  scale: 1.1;
 }
 
 .overlay{

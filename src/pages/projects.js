@@ -1,11 +1,9 @@
 import styles from '@/styles/Projects.module.css'
 import Link from 'next/link';
-import {motion, LayoutGroup} from 'framer-motion'
+import {motion, AnimatePresence} from 'framer-motion'
 import { useState, useEffect, use } from 'react';
 import Cards from "@/components/Cards"
 import {projectsData} from '../constants/projectsData'
-
-console.log('ding',projectsData)
 
 export default function Projects(){
   const [movingProjectsLeft, setProjectsLeft] = useState(() => {
@@ -48,7 +46,13 @@ export default function Projects(){
   animate={{x: "0%"}}
   exit={movingProjectsLeft ? { x: "-102.5vw"} : { x: "102.5vw"}} 
   transition={{duration: 1.5, ease: "easeOut"}}>
-    <div className={styles.gridContainer}>
+    <AnimatePresence>
+    <motion.div className={styles.gridContainer}
+    key="projects"
+    initial={{opacity: 0}}
+    animate={{opacity: 1}}
+    transition={{ease: "easeInOut", duration:3}}
+    exit={{opacity: 0}}>
         <h1>PROJECTS</h1>
         <h2>Check out my recent projects</h2>
         <div className={styles.cardsContainer}>
@@ -56,7 +60,8 @@ export default function Projects(){
               <Cards data={item}/>
             )}
         </div>
-      </div>
+      </motion.div>
+      </AnimatePresence>
       <Link href='/'><button onClick={() => {setProjectsLeft(false);setIndexLeft(true)}} className={`${styles.buttons} ${styles.home}`}>Home</button></Link>
       <Link href="/socials" ><button onClick={() => {setProjectsLeft(true); setSocialsLeft(false);}} className={`${styles.buttons} ${styles.socials}`}>Socials</button></Link>
   </motion.div>
