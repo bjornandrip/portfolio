@@ -50,6 +50,7 @@ export default function Projects(){
   transition={{duration: 1.5, ease: "easeOut"}}>
     <div className={styles.gridContainer}>
         <h1>PROJECTS</h1>
+        <h2>Check out my recent projects</h2>
         <div className={styles.cardsContainer}>
               {projectsData.map((item)=>
               <Cards data={item}/>

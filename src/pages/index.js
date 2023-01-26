@@ -55,7 +55,7 @@ export default function Home() {
         transition={{duration: 1.5, ease: "easeOut"}}>
           <h1>Björn Andri</h1>
           <Image src={portrait} width="300" height="auto"/>
-          <p>Hi I am Björn Andri and I have a BSc in Mechatronics Engineering and I am also an individual software and web developer.<br/>
+          <p>Hi I am Björn Andri and I have a BSc in Mechatronics Engineering and I am also an independent web developer.<br/>
           My main interest is frontend web development... bla bla more text...</p>
           <Link href='/socials'><button onClick={() => {setIndexLeft(false);setSocialsLeft(true)}} className={`${styles.buttons} ${styles.about}`}>Socials</button></Link>
           <Link href="/projects"><button onClick={() => {setIndexLeft(true);setProjectsLeft(false)}} className={`${styles.buttons} ${styles.projects}`}>Projects</button></Link>

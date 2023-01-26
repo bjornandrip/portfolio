@@ -56,9 +56,10 @@ export default function Projects(){
   transition={{duration: 1.5, ease: "easeOut"}}>
     <div className={styles.gridContainer}>
       <h1>SOCIALS</h1>
-      <p>Check out my socials</p>
+      <h2>Check out My socials</h2>
         <div className={styles.svgContainer}>
           <div className={styles.svgContent}>
+            <a onClick={() => navigator.clipboard.writeText('email')}>
             <motion.svg className={styles.svg}
             width = '100%'
             height='100%'
@@ -72,8 +73,10 @@ export default function Projects(){
               fill="none"
               variants={pathVariants}/>
             </motion.svg>
+            </a>
           </div>
           <div className={styles.svgContent}>
+          <a href="https://github.com/bjornandrip">
             <motion.svg className={styles.svg} 
             width='100%' height='100%'
             xmlns="http://www.w3.org/2000/svg"
@@ -87,8 +90,10 @@ export default function Projects(){
               fill="none"
               variants={pathVariants}/>
             </motion.svg>
+            </a>
           </div>
           <div className={styles.svgContent}>
+            <a href="https://www.facebook.com/profile.php?id=100009972552568">
             <motion.svg className={styles.svg}
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 100 100"
@@ -100,6 +105,7 @@ export default function Projects(){
               fill="none"
               variants={pathVariants}/>
             </motion.svg>
+            </a>
           </div>
           <div className={styles.svgContent}>
             <motion.svg className={styles.svg}

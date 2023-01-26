@@ -5,26 +5,31 @@ import imga from '../resources/SamasemBG.png'
 
 const CardExpanded = ({data, unExpand}) =>{
     return( 
+      <>
+      <a href={data.link}>
     <AnimatePresence mode='wait'>
             <motion.div className={styles.cardExpanded}
-            style={{backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.7),rgba(0, 0, 0, 0.7)), url(${data.image.src})`}}
+            style={{backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5)), url(${data.image.src})`}}
             key={data.id}
             initial={{ opacity: 0, scale: 1 }}
             animate={{ opacity: 1, scale: 1 }}
             exit={{ opacity: 0, scale: 0 }}
             >
-                <img className={styles.imgModal} src="" alt="" />
                 <h1>{data.name}</h1>
-                <p>{data.description}d</p>
+                <p className={styles.cardParagraph}>{data.description}</p>
+                
             </motion.div>
-    </AnimatePresence>)
+    </AnimatePresence>
+    </a>
+    <button className={styles.closeButton} onClick={unExpand}></button>
+    </>)
 };
 
 const Overlay = ({unExpand,data}) =>{
     // const variants = {open:{opacity:0.5}, closed: {opacity: 0}}
     return (<motion.div 
-                className={styles.overlay} onClick={unExpand}>
-                    <CardExpanded data={data}/>
+                className={styles.overlay}>
+                    <CardExpanded data={data} unExpand={unExpand}/>
             </motion.div>)
 };
 
