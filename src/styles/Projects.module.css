@@ -1,3 +1,7 @@
+@media only screen and (min-width: 768px){
+  .isMobile{
+    display:none;
+  }
 .box{
   position: absolute;
   text-align: center;
@@ -141,14 +145,92 @@
   transform: rotate(-45deg);
   bottom: 0;
 }
+}
 
 @media only screen and (max-width: 767px) {
+  .isBrowser{
+    display: none;
+  }
   .box {
     position: relative;
     background-color: black;
+    text-align: center;
     width: 100vw;
     height: 100vh;
     left: 0;
     top: 0;
+    margin: 0 auto;
+  }
+  .gridContainer{
+    height: inherit;
+    display: grid;
+    grid-template-rows: 1fr 1fr 3fr;
+  }
+  .cardsContainer{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .cardContainer{
+    width: 20%;
+    position: relative;
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
+  .card{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7),rgba(0, 0, 0, 0.7));
+    overflow: hidden;
+    box-shadow: 0 0 10px -2px rgba(0, 0, 0, 0.2);
+    padding: 2rem;
+    border-radius: 1rem;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    position: relative;
+    cursor: pointer;
+    text-align: center;
+  }
+  .cardCompact{
+    width: 100%;
+    line-height: 1000%;
+    padding: 0.5rem;
+    border-radius: 1.5rem;
+    transition: all .2s ease-in-out;
+  }
+  .cardCompact:hover{
+    scale: 1.1;
+  }
+  
+  .overlay{
+    position: fixed;
+    top: 0;
+    left:calc((100% - 70vw)/2);
+    width: 70vw;
+    height:100%;
+    background: rgba(0,0,0,0.6);
+    z-index: 100;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .cardExpanded{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    width: 70vw;
+    height: 70vh;
+    margin: 0 auto;
+    border-radius: 1.5rem;
+    background-repeat: no-repeat;
+    background-position: center top;
+  }
+  .cardParagraph{
+    width: 50%;
+    margin: 0 auto;
+    font-size: large;
   }
 }

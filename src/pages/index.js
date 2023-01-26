@@ -1,5 +1,5 @@
 import React from 'react'
-import { useMediaQuery } from 'react-responsive'
+import { useMediaQuery, ServerSideRender } from 'react-responsive'
 import Head from 'next/head'
 import styles from '@/styles/Home.module.css'
 import {motion} from 'framer-motion'
@@ -42,12 +42,8 @@ export default function Home() {
     if ( movingSocialsLeft !== undefined && movingSocialsLeft !== null) window.localStorage.setItem("socials-Left", JSON.stringify(movingSocialsLeft))
   },[movingSocialsLeft])
 
-  const isMobile = useMediaQuery({
-    query: 'max-width: 767px'
-  });
+  const [isMobile, setMobile] = useState(false);
 
-  console.log('mobile?',isMobile)
- 
 
   return (
     <>
@@ -57,8 +53,7 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      {isMobile ? (
-        <>
+      <div className={styles.isMobile}>
       <div className={styles.box}>
         <h1>Björn Andri</h1>
         <Image src={portrait} width="300" height="auto"/>
@@ -67,8 +62,8 @@ export default function Home() {
       </div>
       <Projects/>
       <Socials/>
-      </>
-      ):(
+      </div>
+      <div className={styles.isBrowser}>
       <motion.div className={styles.box}
         initial={movingIndexLeft? {x: "-102.5vw"} : {x: "102.5vw"}} 
         animate={{x: "0%"}}
@@ -81,7 +76,7 @@ export default function Home() {
           <Link href='/socials'><button onClick={() => {setIndexLeft(false);setSocialsLeft(true)}} className={`${styles.buttons} ${styles.about}`}>Socials</button></Link>
           <Link href="/projects"><button onClick={() => {setIndexLeft(true);setProjectsLeft(false)}} className={`${styles.buttons} ${styles.projects}`}>Projects</button></Link>
         </motion.div>  
-        )}
+        </div>
 
         
     </>

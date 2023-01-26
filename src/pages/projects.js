@@ -38,11 +38,7 @@ export default function Projects(){
   useEffect(() => {
     if ( movingSocialsLeft !== undefined && movingIndexLeft !== null) window.localStorage.setItem("index-Left", JSON.stringify(movingIndexLeft))
   },[movingIndexLeft])
-  const days = [25, 26, 27]
 
-  const isMobile = useMediaQuery({
-    query: 'max-width: 767px'
-  });
   const ref1 = useRef(null);
   const ref2 = useRef(null);
   const ref3 = useRef(null);
@@ -52,7 +48,8 @@ export default function Projects(){
 
   return(
     <> 
-    {isMobile ? (<div className={styles.box}>
+    <div className={styles.isMobile}>
+      <div className={styles.box}>
       
         <div className={styles.gridContainer}
           >
@@ -83,7 +80,9 @@ export default function Projects(){
               </motion.div>
               </AnimatePresence>
           </div>
-      </div>):(
+      </div>
+      </div>
+      <div className={styles.isBrowser}>
         <motion.div className={styles.box} 
         initial={movingProjectsLeft ? { x: "-102.5vw"} : { x: "102.5vw"}} 
         animate={{x: "0%"}}
@@ -107,7 +106,8 @@ export default function Projects(){
             </AnimatePresence>
             <Link href='/'><button onClick={() => {setProjectsLeft(false);setIndexLeft(true)}} className={`${styles.buttons} ${styles.home}`}>Home</button></Link>
             <Link href="/socials" ><button onClick={() => {setProjectsLeft(true); setSocialsLeft(false);}} className={`${styles.buttons} ${styles.socials}`}>Socials</button></Link>
-        </motion.div>)}
+        </motion.div>
+        </div>
  
   </>
    

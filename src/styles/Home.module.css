@@ -1,42 +1,53 @@
-.box{
-  position: absolute;
-  text-align: center;
-  width: 95vw;
-  height: 90vh;
-  top: 5vh;
-  left: 2.5vw;
-  background-color: black;
-  margin: 0 auto;
+@media only screen and (min-width: 768px) {
+  .isMobile{
+    display: none;
+  }
+  .box{
+    position: absolute;
+    text-align: center;
+    width: 95vw;
+    height: 90vh;
+    top: 5vh;
+    left: 2.5vw;
+    background-color: black;
+    margin: 0 auto;
+  }
+  
+  .buttons{
+    background-color: transparent;
+    color: aliceblue;
+    font-size: large;
+    cursor: pointer;
+    border: 0.5px solid aliceblue;
+    height: 70px;
+    width: 170px;
+  }
+  .about{
+    position: absolute;
+    top: calc(50% - 35px);
+    left: -2%;
+  }
+  
+  .projects{
+    position: absolute;
+    top: calc(50% - 35px);
+    right: -2%;
+  }
 }
 
-.buttons{
-  background-color: transparent;
-  color: aliceblue;
-  font-size: large;
-  cursor: pointer;
-  border: 0.5px solid aliceblue;
-  height: 70px;
-  width: 170px;
-}
-.about{
-  position: absolute;
-  top: calc(50% - 35px);
-  left: -2%;
-}
-
-.projects{
-  position: absolute;
-  top: calc(50% - 35px);
-  right: -2%;
-}
 
 @media only screen and (max-width: 767px) {
+  .isBrowser{
+    display: none;
+  }
   .box {
     position: relative;
     background-color: black;
+    text-align: center;
     width: 100vw;
     height: 100vh;
     left: 0;
     top: 0;
+    margin: 0 auto;
   }
 }

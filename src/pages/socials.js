@@ -52,22 +52,18 @@ export default function Projects(){
   async function copyEmail (){
     await navigator.clipboard.writeText('bjornandrip@gmail.com');
     alert('Email copied to clipboard');
-  } 
-  const isMobile = useMediaQuery({
-    query: 'max-width: 767px'
-  });
+  }
 
   return(
     <> 
-    {isMobile ? (
-        <>
+    <div className={styles.isMobile}>
       <div className={styles.box}>
         <h1>Socials</h1>
         <p>Hi I am Björn Andri and I have a BSc in Mechatronics Engineering and I am also an independent web developer.<br/>
           My main interest is frontend web development... bla bla more text...</p>
       </div>
-      </>
-      ):(
+    </div>
+    <div className={styles.isBrowser}>
         <motion.div className={styles.box} 
         initial={movingSocialsLeft ? { x: "-102.5vw"} : { x: "102.5vw"}} 
         animate={{x: "0%"}}
@@ -144,7 +140,7 @@ export default function Projects(){
             <Link href='/projects'><button onClick={() => {setSocialsLeft(false);setProjectsLeft(true)}} className={`${styles.buttons} ${styles.home}`}>Projects</button></Link>
             <Link href="/"><button onClick={() => {setSocialsLeft(true); setIndexLeft(false);}} className={`${styles.buttons} ${styles.about}`}>Home</button></Link>
         </motion.div>
-        )}
+        </div>
  
     
   </>
