@@ -56,7 +56,7 @@ export default function Home() {
         <Image src={portrait} width="300" height="auto"/>
         <p className={styles.myInfo}>Hi I am Björn Andri and I have a BSc in Mechatronics Engineering and I am also an independent web developer.
           My main interest is front end web development since I have the most experience there but I plan on 
-          practicing my skills in other areas as well. </p>
+          practicing my skills in other areas as well. SKRIFA LENGRI OG BETRI TEXTA </p>
       </div>
       <Projects/>
       <Socials/>
@@ -69,9 +69,9 @@ export default function Home() {
         transition={{duration: 1.5, ease: "easeOut"}}>
           <h1>Björn Andri</h1>
           <Image src={portrait} width="300" height="auto"/>
-          <p>Hi I am Björn Andri and I have a BSc in Mechatronics Engineering and I am also an independent web developer.
+          <p className={styles.myInfo}>Hi I am Björn Andri and I have a BSc in Mechatronics Engineering and I am also an independent web developer.
           My main interest is front end web development since I have the most experience there but I plan on 
-          practicing my skills in other areas as well. </p>
+          practicing my skills in other areas as well. SKRIFA LENGRI OG BETRI TEXTA</p>
           <Link href='/socials'><button onClick={() => {setIndexLeft(false);setSocialsLeft(true)}} className={`${styles.buttons} ${styles.about}`}>Socials</button></Link>
           <Link href="/projects"><button onClick={() => {setIndexLeft(true);setProjectsLeft(false)}} className={`${styles.buttons} ${styles.projects}`}>Projects</button></Link>
         </motion.div>  
