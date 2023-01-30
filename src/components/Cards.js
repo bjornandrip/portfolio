@@ -58,12 +58,17 @@ function Card({data, expand}){
 
 const Cards = ({data}) =>{
     const [isExpanded, setExpanded] = useState(false)
+    let body
+    {typeof window === "object" && (body = document.querySelector("body"))}
+    
 
     const expandCard = () =>{
       setExpanded(true);
+      body.style.overflow = "hidden"
     };
     const unExpandCard = () =>{
       setExpanded(false);
+      body.style.overflow = ""
     };
 
   return(
