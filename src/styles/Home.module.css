@@ -56,9 +56,16 @@
     left: 0;
     top: 0;
     margin: 0 auto;
+    display: block;
+  }
+  .portrait{
+    width: auto;
+    height: 50vh;
   }
   .myInfo{
     width: 80vw;
     margin: 0 auto;
+    font-size: large;
   }
+
 }
