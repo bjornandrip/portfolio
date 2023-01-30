@@ -5,7 +5,8 @@
     text-align: center;
     width: 100vw;
     height: 88vh;
-    background-color: black;
+    /* background-color: black; */
+    background: transparent;
     margin: 0 auto;
     display: grid;
     grid-template-rows: 1fr 1fr 1fr;
@@ -64,7 +65,6 @@
   @media only screen and (max-width: 767px) {
     .box {
       position: relative;
-      background-color: black;
       text-align: center;
       width: 100vw;
       height: 100vh;

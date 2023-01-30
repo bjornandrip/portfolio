@@ -5,10 +5,12 @@
     text-align: center;
     width: 100vw;
     height: 88vh;
-    background-color: black;
+   background: transparent;
     margin: 0 auto;
     display: grid;
     grid-template-rows: 1fr 5fr;
+    z-index: 20;
+
   }
 .cardsContainer{
   display: flex;

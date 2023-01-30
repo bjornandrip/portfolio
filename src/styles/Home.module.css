@@ -11,7 +11,7 @@
     justify-content: center;
     align-items: center;
     justify-items: center;
-    overflow: hidden;
+    overflow: visible;
   }
   .portrait{
     width: auto;
