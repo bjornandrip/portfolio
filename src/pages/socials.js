@@ -32,8 +32,8 @@ const socInView = useInView(ref)
           <div className={styles.gridContainer}>
             <h1>SOCIALS</h1>
             <h2 className={styles.socialsInfo}>Feel free to contact me on any of my socials below</h2>
-              <div className={styles.svgContainer}>
-                <div className={styles.svgContent} ref={ref}>
+            <div className={styles.svgContainer}>
+                <div className={styles.svgContent}>
                   <a onClick={copyEmail}>
                   <motion.svg className={styles.svg}
                   width = '100%'
@@ -41,7 +41,7 @@ const socInView = useInView(ref)
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 100 100"
                   initial="hidden"
-                  animate={socInView ? ("visible"):("hidden")}>
+                  animate="visible">
                     <motion.path className={styles.pathMail}
                     fill-rule="evenodd" clip-rule="evenodd" 
                     d={paths.paths.mail}
@@ -57,7 +57,7 @@ const socInView = useInView(ref)
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 100 100"
                   initial="hidden"
-                  animate={socInView ? ("visible"):("hidden")}>
+                  animate="visible">
                     <motion.path className={styles.pathGit}
                     fill-rule="evenodd" 
                     clip-rule="evenodd" 
@@ -73,7 +73,7 @@ const socInView = useInView(ref)
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 100 100"
                   initial="hidden"
-                  animate={socInView ? ("visible"):("hidden")}>
+                  animate="visible">
                     <motion.path className={styles.pathFb}
                     fill-rule="evenodd" clip-rule="evenodd" 
                     d={paths.paths.facebook}
@@ -87,7 +87,7 @@ const socInView = useInView(ref)
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 100 100"
                   initial="hidden"
-                  animate={socInView ? ("visible"):("hidden")}>
+                  animate="visible">
                     <motion.path className={styles.pathInsta}
                     fill-rule="evenodd" clip-rule="evenodd" 
                     d={paths.paths.insta}
