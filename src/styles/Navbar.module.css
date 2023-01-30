@@ -33,6 +33,15 @@
     width: 100%;
     background-color: white;
     }
+    .progressBar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 10px;
+        background: red;
+        transform-origin: 0%;
+      }
 }
 
 

@@ -1,11 +1,23 @@
 import React,{useState} from 'react'
 import styles from '@/styles/Navbar.module.css'
 import Link from 'next/link'
-import { motion, AnimatePresence } from 'framer-motion'
+import { motion, AnimatePresence,useScroll,useMotionValueEvent } from 'framer-motion'
 
-const Navbar = () => {
+const Navbar = (selectedPage) => {
   const [isOpen, setIsOpen] = useState(false)
   const [isSelected, setIsSelected] = useState('home')
+  const {scrollYProgress} = useScroll()
+  useMotionValueEvent(scrollYProgress, "change", (latest)=>{
+    if (latest < 0.2){
+      setIsSelected('home')
+    }
+    if (latest >0.2){
+      setIsSelected('projects')
+    }
+    if (latest >0.6){
+      setIsSelected('socials')
+    }
+  })
   return (
     <>
     <header className={styles.navbarContainer}>

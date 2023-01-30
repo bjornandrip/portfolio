@@ -15,7 +15,6 @@ export default function Home() {
   return (
     <>
       <div className={styles.box}>
-        {/* <h1>Björn Andri</h1> */}
         <Image src={portrait} className={styles.portrait}/>
         <p className={styles.myInfo}>Welcome to my portfolio! I am Björn Andri, a Mechatronics Engineer 
         and independent web developer with a passion for front-end development. My expertise lies in delivering 
