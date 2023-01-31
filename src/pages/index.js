@@ -15,7 +15,7 @@ export default function Home() {
   return (
     <>
       <div className={styles.box}>
-        <Image src={portrait} className={styles.portrait}/>
+        <Image src={portrait} priority='true' loading='eager' className={styles.portrait} alt="Portrait Image"/>
         <p className={styles.myInfo}>Welcome to my portfolio! I am Björn Andri, a Mechatronics Engineer 
         and independent web developer with a passion for front-end development. My expertise lies in delivering 
         user-friendly and visually appealing websites using frameworks such as React/Next.js. 

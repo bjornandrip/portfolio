@@ -45,7 +45,7 @@ const Navbar = (selectedPage) => {
         {isOpen && (
           <motion.nav
             initial={{ opacity: 0, x: "100%" }}
-            animate={{ opacity: 1, x: 0 }}
+            animate={{ opacity: 1, x: -20 }}
             exit={{ opacity: 0, x: "100%" }}
             className={styles.burgerLinks}
           >

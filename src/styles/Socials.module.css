@@ -82,16 +82,16 @@
       background-color: black;
     }
     .pathInsta{
-      transform: translate(0px, 0px);
+      transform: translate(7%, 0px);
     }
     .pathFb{
-      transform: translate(8%, 4.5%);
+      transform: translate(16%, 4.5%);
     }
     .pathGit{
-      transform: translate(7%, 3%);
+      transform: translate(15%, 3%);
     }
     .pathMail{
-      transform: translate(-6%, 0%);
+      transform: translate(0%, 0%);
     }
   }
   
