@@ -23,6 +23,10 @@ export default function Projects(){
   }
   const ref = useRef(null)
   const socInView = useInView(ref)
+  const ref1 = useRef(null)
+  const h1InView = useInView(ref1)
+  const ref2 = useRef(null)
+  const h2InView = useInView(ref2)
 
   useEffect (() => {
     console.log('socinveiw',socInView)
@@ -34,8 +38,12 @@ export default function Projects(){
     <> 
         <motion.div className={styles.box} id="socials">
           <div className={styles.gridContainer}>
-            <h1>SOCIALS</h1>
-            <h2 className={styles.socialsInfo}>Feel free to contact me on any of my socials below</h2>
+            <motion.h1 ref={ref1} initial={{x:-100}} animate={h1InView ?({ x: 0 }):({opacity:0})} transition={{type: "spring", stiffness: 100}}>
+              SOCIALS
+            </motion.h1>
+            <motion.h2 className={styles.socialsInfo} ref={ref2} initial={{x:-100}} animate={h2InView ?({ x: 0 }):({opacity:0})} transition={{type: "spring", stiffness: 100}}>
+              Feel free to contact me on any of my socials below
+            </motion.h2>
             <div className={styles.svgContainer}>
                 <div className={styles.svgContent} ref={ref}>
                   <a onClick={copyEmail}>
