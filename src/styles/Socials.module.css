@@ -23,6 +23,7 @@
   .socialsInfo{
     width: 70%;
     margin: 0 auto;
+    padding-bottom: 10px;
   }
   .svgContainer{
     display: grid;
@@ -82,16 +83,16 @@
       background-color: black;
     }
     .pathInsta{
-      transform: translate(7%, 0px);
+      transform: translate(11%, 0px);
     }
     .pathFb{
-      transform: translate(16%, 4.5%);
+      transform: translate(19%, 4.5%);
     }
     .pathGit{
-      transform: translate(15%, 3%);
+      transform: translate(18%, 3%);
     }
     .pathMail{
-      transform: translate(0%, 0%);
+      transform: translate(3%, 0%);
     }
   }
   

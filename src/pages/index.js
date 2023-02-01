@@ -7,6 +7,7 @@ import Image from 'next/image'
 import portrait from '../resources/Portrait.gif'
 import Projects from './projects'
 import Socials from './socials'
+import Overlay from "@/components/Cards"
 
 export default function Home() {
 

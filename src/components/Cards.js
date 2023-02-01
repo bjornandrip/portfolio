@@ -16,7 +16,7 @@ const CardExpanded = ({data, unExpand}) =>{
             transition={{ease: "easeInOut", duration:0.5}}
             exit={{ opacity: 0, scale: 0 }}
             >
-                <h1>{data.name}</h1>
+                <h1 className={styles.cardTitle}>{data.name}</h1>
                 <p className={styles.cardParagraph}>{data.description}</p>
                 
             </motion.div>
