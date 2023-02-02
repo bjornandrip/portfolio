@@ -9,6 +9,7 @@
     margin: 0 auto;
     display: grid;
     grid-template-rows: 1fr 5fr;
+    z-index: 20;
   }
 .cardsContainer{
   display: flex;
@@ -77,6 +78,8 @@
   width: 50%;
   margin: 0 auto;
   font-size: large;
+  background: rgba(0,0,0,0.8);
+  border-radius: 1.5rem;
 }
 
 
@@ -184,7 +187,7 @@
     width: 80%;
     margin: 0 auto;
     font-size: medium;
-    background: rgba(0,0,0,0.6);
+    background: rgba(0,0,0,0.8);
     border-radius: 1.5rem;
   }
   .closeButton{

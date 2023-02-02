@@ -9,15 +9,15 @@ const CardExpanded = ({data, unExpand}) =>{
       <a href={data.link}>
     <AnimatePresence mode='wait'>
             <motion.div className={styles.cardExpanded}
-            style={{backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5)), url(${data.image.src})`}}
+            style={{backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.7),rgba(0, 0, 0, 0.7)), url(${data.image.src})`}}
             key={data.id}
             initial={{ opacity: 0, scale: 0 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ease: "easeInOut", duration:0.5}}
             exit={{ opacity: 0, scale: 0 }}
             >
-                <h1 className={styles.cardTitle}>{data.name}</h1>
-                <p className={styles.cardParagraph}>{data.description}</p>
+                
+                <p className={styles.cardParagraph}><h1 className={styles.cardTitle}>{data.name}</h1><br />{data.description}</p>
                 
             </motion.div>
     </AnimatePresence>
