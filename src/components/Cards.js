@@ -6,7 +6,6 @@ import imga from '../resources/SamasemBG.png'
 const CardExpanded = ({data, unExpand}) =>{
     return( 
       <>
-      <a href={data.link}>
     <AnimatePresence mode='wait'>
             <motion.div className={styles.cardExpanded}
             style={{backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.7),rgba(0, 0, 0, 0.7)), url(${data.image.src})`}}
@@ -17,17 +16,18 @@ const CardExpanded = ({data, unExpand}) =>{
             exit={{ opacity: 0, scale: 0 }}
             >
                 
-                <p className={styles.cardParagraph}><h1 className={styles.cardTitle}>{data.name}</h1><br />{data.description}</p>
-                
-            </motion.div>
-    </AnimatePresence>
-    </a>
-    <motion.button className={styles.closeButton} onClick={unExpand}
+                <a href={data.link}><p className={styles.cardParagraph}><h1 className={styles.cardTitle}>{data.name}</h1><br />{data.description}</p></a>
+            <motion.button className={styles.closeButton} onClick={unExpand}
     initial={{ opacity: 0}}
     animate={{ opacity: 1}}
     transition={{ease: "easeInOut", duration:4}}
     exit={{ opacity: 0}}></motion.button>
-    </>)
+            </motion.div>
+    </AnimatePresence>
+    
+    
+    </>
+    )
 };
 
 const Overlay = ({unExpand,data}) =>{
