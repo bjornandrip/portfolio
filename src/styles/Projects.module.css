@@ -12,16 +12,22 @@
     z-index: 20;
   }
 .cardsContainer{
-  display: flex;
-  flex-direction: row;
+  width: 50%;
+  height: fit-content;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  /* flex-direction: row;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: center; */
 }
 .cardContainer{
-  width: 20%;
+  /* flex-basis: 33.3333333%; */
+  /* width: 20%; */
   position: relative;
   margin-left: 1rem;
   margin-right: 1rem;
+  margin-bottom: 2rem;
 }
 .card{
   background-image: linear-gradient(rgba(0, 0, 0, 0.7),rgba(0, 0, 0, 0.7));

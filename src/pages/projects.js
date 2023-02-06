@@ -35,10 +35,7 @@ export default function Projects(){
               >
                 Check out my recent projects</motion.h2> */}
               <motion.div className={styles.cardsContainer}
-              initial={{x:-100}}
-              animate={isInView3 ?({ x: 0 }):({opacity:0})} 
-              transition={{type: "spring", stiffness: 100 }}
-              ref={ref3}>
+              >
                     {projectsData.map((item)=>
                     <Cards data={item}/>
                   )}

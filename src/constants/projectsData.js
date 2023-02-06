@@ -17,7 +17,7 @@ export const projectsData = [
         link: 'https://samasem.is'
     },
     {
-        id:2,
+        id:3,
         name: 'HistoryGuessr',
         image: HistoryGuessrBG,
         description: 'This is an online game that I developed for fun and that I will keep developing. Players get 5 images one after another and are supposed to guess what year it was captured. I plan on adding a map to let players guess where the picture was taken aswell.',

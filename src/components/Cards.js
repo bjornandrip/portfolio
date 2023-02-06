@@ -1,5 +1,5 @@
-import {motion, LayoutGroup, AnimatePresence} from 'framer-motion'
-import { useState, useEffect, use } from 'react';
+import {motion, LayoutGroup, AnimatePresence, useInView} from 'framer-motion'
+import { useState, useEffect, use, useRef } from 'react';
 import styles from '@/styles/Projects.module.css'
 import imga from '../resources/SamasemBG.png'
 
@@ -39,11 +39,14 @@ const Overlay = ({unExpand,data}) =>{
 };
 
 function Card({data, expand}){
+  const ref = useRef(null)
+  const isInView = useInView(ref)
   return(
     <motion.div className={styles.cardContainer}
     initial={{scale: 0}}
-    animate={{scale: 1}}
-    transition={{ease: "easeInOut", duration:3}}>
+    animate={isInView ?{scale: 1}:{scale:0}}
+    transition={{ease: "easeInOut", duration: 5, type: "spring", stiffness: 100}}
+    ref={ref}>
         <div
         id={data.id}
         className={`${styles.card} ${styles.cardCompact}`}
