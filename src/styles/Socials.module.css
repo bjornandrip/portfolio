@@ -27,9 +27,9 @@
   }
   .svgContainer{
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
     margin: auto;
-    width: 35vw;
+    width: 40vw;
     height: 150px;
     background-color: black;
   }
@@ -58,6 +58,10 @@
   .pathFb{
     transform: translate(10%, 4.5%);
   }
+  .pathLinkedin{
+    scale: 1.01;
+    transform: translate(11%, 4%);
+  }
   .pathInsta{
     transform: translate(10%, -3%);
   }
@@ -76,7 +80,7 @@
     .svgContainer{
       display: grid;
       grid-template-columns: none;
-      grid-template-rows: 1fr 1fr 1fr 1fr;
+      grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
       margin: auto;
       width: 60vw;
       height: 80vh;
@@ -87,6 +91,9 @@
     }
     .pathFb{
       transform: translate(19%, 4.5%);
+    }
+    .pathLinkedin{
+      transform: translate(16%, 0);
     }
     .pathGit{
       transform: translate(18%, 3%);

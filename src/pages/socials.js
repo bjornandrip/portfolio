@@ -95,6 +95,21 @@ export default function Projects(){
                   </a>
                 </div>
                 <div className={styles.svgContent}>
+                  <a href="https://www.linkedin.com/in/björn-andri-pálsson-ab2603265/">
+                  <motion.svg className={styles.svg}
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 100 100"
+                  initial="hidden"
+                  animate={socInView ? "visible":"hidden"}>
+                    <motion.path className={styles.pathLinkedin}
+                    fill-rule="evenodd" clip-rule="evenodd" 
+                    d={paths.paths.linkedin}
+                    fill="none"
+                    variants={pathVariants}/>
+                  </motion.svg>
+                  </a>
+                </div>
+                <div className={styles.svgContent}>
                   <motion.svg className={styles.svg}
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 100 100"
